@@ -1,0 +1,38 @@
+<mat-toolbar color="primary"> Weather App </mat-toolbar>
+<div fxFlex="50" fxFlex.lt-md="100" fxLayout="column">
+  <div
+    fxLayout="column"
+    fxLayoutAlign="center"
+    style="margin-top: 10px"
+    class="content"
+  >
+    <div fxLayout="row" fxLayoutAlign="center">
+      <mat-form-field class="mr">
+        <mat-label>Select country</mat-label>
+        <mat-select [formControl]="countryControl">
+          <mat-option *ngFor="let country of countries" [value]="country">
+            {{ country.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="mr">
+        <mat-label>Select State</mat-label>
+        <mat-select [formControl]="stateControl">
+          <mat-option *ngFor="let state of states" [value]="state">
+            {{ state }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Select city</mat-label>
+        <mat-select [formControl]="cityControl">
+          <mat-option *ngFor="let city of cities" [value]="city">
+            {{ city }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <br />
+  <router-outlet></router-outlet>
+</div>
